@@ -63,7 +63,7 @@ const handleChuck = (e) => {
 const isChucked = (item) =>
   checked.includes(item) ? "checked-item" : "not-checked-item";
 
-// Add a countdown
+// Add a countdown list AND a countdown clock!
 // const countdown = () =>
 //   checked>0 ? (count-=1, `Only ${setCount} items left to go!`) : "You did it! Now you can turn 40!"
 
