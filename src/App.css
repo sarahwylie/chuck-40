@@ -1,0 +1,25 @@
+* {
+  background-color: aquamarine;
+}
+
+.title {
+  font-size: 5rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-left: 3em;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+.checked-item,
+.not-checked-item {
+  margin-left: 10px;
+}
+.checked-item {
+  text-decoration: line-through;
+  text-decoration-color: hotpink;
+}
