@@ -11,13 +11,13 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin-left: 3em;
+  margin-left: .5em;
   font-size: 2em;
   margin-bottom: 2em;
 }
 .checked-item,
 .not-checked-item {
-  margin-left: 10px;
+  margin-left: .5em;
 }
 .checked-item {
   text-decoration: line-through;
