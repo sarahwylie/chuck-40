@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./App.css"
+import CountdownTimer from "./countdownTimer"
 
 const chucklist = [
 "Attend a museum free night OR a 21+ night at the Thinkery",
@@ -63,9 +64,10 @@ const handleChuck = (e) => {
 const isChucked = (item) =>
   checked.includes(item) ? "checked-item" : "not-checked-item";
 
-// Add a countdown list AND a countdown clock!
+// Add a countdown list
 // const countdown = () =>
 //   checked>0 ? (count-=1, `Only ${setCount} items left to go!`) : "You did it! Now you can turn 40!"
+const targetDate = '2024-12-08T00:00:00';
 
   return (
     <div className="chuckList">
@@ -78,7 +80,8 @@ const isChucked = (item) =>
           </div>
         ))}
       </div>
-      {/* <div>{countdown}</div> */}
+      <h1 className='counting'>COUNTDOWN TO 40</h1>
+      <CountdownTimer targetDate={targetDate}/>
     </div>
   );
 };
