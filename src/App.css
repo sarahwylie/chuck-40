@@ -82,7 +82,7 @@
   line-height: 1rem;
 }
 
-.counting {
+.counting, .itemCheck {
   text-align: center;
 
 }

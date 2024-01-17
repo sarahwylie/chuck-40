@@ -35,11 +35,11 @@ const chucklist = [
 "Reconnect with an old friend",
 "Make a new friend who you care about deeply",
 "Try a new exercise",
-"Take some mushrooms",
+"Follow a craze or trend for one day",
 "Get a new tattoo",
 "Get a spiritual reading (tarot, palm, psychic, whatever)",
 "Attend a gay event",
-"Try a fetish",
+"Attend a festival",
 "Watch five supergay movies",
 "Finish your will",
 "Mentor someone"
@@ -47,15 +47,18 @@ const chucklist = [
 
 const App = () => {
   const [checked, setChecked] = React.useState([]);
-  // const [count, setCount] = React.useState('40');
+  const [count, setCount] = React.useState(40);
 
 // Add/Remove checked item from list
+// Add a countdown list
 const handleChuck = (e) => {
   var updatedList = [...checked];
   if (e.target.checked) {
     updatedList = [...checked, e.target.value];
+    setCount(count - 1)
   } else {
     updatedList.splice(checked.indexOf(e.target.value), 1);
+    setCount(count + 1)
   }
   setChecked(updatedList);
 };
@@ -64,9 +67,6 @@ const handleChuck = (e) => {
 const isChucked = (item) =>
   checked.includes(item) ? "checked-item" : "not-checked-item";
 
-// Add a countdown list
-// const countdown = () =>
-//   checked>0 ? (count-=1, `Only ${setCount} items left to go!`) : "You did it! Now you can turn 40!"
 const targetDate = '2024-12-08T00:00:00';
 
   return (
@@ -81,6 +81,7 @@ const targetDate = '2024-12-08T00:00:00';
         ))}
       </div>
       <h1 className='counting'>COUNTDOWN TO 40</h1>
+      <h3 className="itemCheck">{count===0 ? "You did it! All items are complete!" : `Only ${count} item${count!==1 ? 's' : ''} left to go!`}</h3>
       <CountdownTimer targetDate={targetDate}/>
     </div>
   );
